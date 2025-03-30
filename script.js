@@ -7,25 +7,35 @@ document.addEventListener("DOMContentLoaded", () => {
   const loading = document.getElementById("loading");
   const errorMessage = document.getElementById("error");
 
-  // 🔹 Replace these with your API Key & Folder ID
-  const API_KEY = "AIzaSyChiR1c-41WZbHCjOI-iqrxlIpy3wGektQ";
+  // 🔹 Replace these with your actual API Key & Folder ID
+  const API_KEY = "AIzaSyChiR1c-41WZbHCjOI-iqrxlIpy3wGektQ"; 
   const FOLDER_ID = "17r67lCw9EXSiuLcRo-djsZ2kLgZxORqW";
 
   async function fetchImagesFromDrive() {
-    try {
-      const response = await fetch(
-        `https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents&key=${API_KEY}&fields=files(id,name,thumbnailLink,webContentLink,mimeType)`
-      );
-      const data = await response.json();
+    let images = [];
+    let pageToken = null;
 
-      if (!data.files || data.files.length === 0) {
-        throw new Error("No images found in the folder.");
-      }
+    try {
+      do {
+        const response = await fetch(
+          `https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents&key=${API_KEY}&fields=files(id,name,thumbnailLink,webContentLink,mimeType),nextPageToken&pageSize=100` +
+            (pageToken ? `&pageToken=${pageToken}` : "")
+        );
+        const data = await response.json();
+
+        if (!data.files || data.files.length === 0) {
+          throw new Error("No images found in the folder.");
+        }
+
+        images = images.concat(data.files);
+        pageToken = data.nextPageToken; // Get the next page token
+
+      } while (pageToken); // Keep fetching if there are more images
 
       // ✅ Hide loading indicator
       loading.style.display = "none";
 
-      data.files.forEach((file) => {
+      images.forEach((file) => {
         if (!file.mimeType.startsWith("image/")) return; // Skip non-image files
 
         const imgContainer = document.createElement("div");
