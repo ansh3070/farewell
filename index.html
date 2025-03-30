@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Image Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="logo.png" alt="Gallery Logo" class="logo">
+    </div>
+    <h1 class="site-title">krishna public school <span>Farewell 2k25</span></h1>
+    <p class="site-description">© Image Gallery website created by ig-@ansh__3070 . All rights reserved.</p>
+  </header>
+
+  <main>
+    <div class="container">
+      <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>Loading your images...</p>
+      </div>
+      
+      <div id="error" class="error-message" style="display: none;">
+        Failed to load images. Please try again later.
+      </div>
+      
+      <div id="gallery" class="gallery-grid"></div>
+    </div>
+  </main>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <button id="close-modal" class="close-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="modal-image-container">
+        <img id="modal-image" src="/placeholder.svg" alt="">
+      </div>
+      <a id="modal-download" class="download-button modal-download" href="#" download>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span>Download</span>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+
+    <div class="credits-container">
+      <h2>🌟 A Heartfelt Thank You! 🌟</h2>
+      <p>This event was a grand success because of the dedication and teamwork of these amazing individuals.</p>
+      <p>Special thanks to these students for their contributions:</p>
+            
+            <div class="credit-group">
+        
+              <div class="credit">🎖 Head Girl – Aayushi Taunk</div>
+              <div class="credit">🎖 Head Boy – Aditya Singh</div>
+              <div class="credit">🎖 Vice Head Boy – Saksham Shrivastava</div>
+              <div class="credit">🎖 Vice Head Girl – Mansi Singh</div>
+              <div class="credit">🎖 Discipline Incharge – Anirudh Kumar Gouda</div>
+              <div class="credit">🎖 Discipline Incharge – Vrishali Dubey</div>
+              <div class="credit">🚀 Cyber Club Incharge – Oz Sharada Sahu</div>
+              <div class="credit">🚀 Cyber Club Incharge – Ansh Rajput</div>
+              <div class="credit">⚽ Sports Incharge – Aditya Singh</div>
+              <div class="credit">⚽ Sports Incharge – Akshara Mandal</div>
+              <div class="credit">🎨 Art Club Incharge – Shiva Archerjee</div>
+              <div class="credit">🎨 Art Club Incharge – Navya Saraf</div>
+              <div class="credit">🎭 Cultural Incharge – Keya Ahirwar</div>
+              <div class="credit">🎭 Cultural Incharge – Aditi Mukherjee</div>
+              <div class="credit">🌍 Eco Club Incharge – Kashvi Gupta</div>
+              <div class="credit">🌍 Eco Club Incharge – Lavanya Pujari</div>
+              <div class="credit">🏡 Shivaji House Incharge – Sourya Pratap Singh</div>
+              <div class="credit">🏡 Shivaji House Incharge – Aastha Sharma</div>
+              <div class="credit">🏡 Bose House Incharge – Shaurya Pratap Singh</div>
+              <div class="credit">🏡 Bose House Incharge – Sachi Shukla</div>
+              <div class="credit">🏡 Tagore House Incharge – Kalash Tripathi</div>
+              <div class="credit">🏡 Tagore House Incharge – Ipsa Sharma</div>
+              <div class="credit">🏡 Ashoka House Incharge – Aman Kesharwani</div>
+              <div class="credit">🏡 Ashoka House Incharge – Vaishnavi Mishra</div>
+              <div class="credit">🧼 Cleanliness & Hygiene Incharge – Anoushka Tiwari</div>
+            </div>
+        </div>
+    <p>&copy; oragnised by council members of krishna public school</p>
+
+
+    <div class="promo">
+      <p>website Developed by <strong>Ansh Rajput</strong> <a href="https://www.instagram.com/ansh__3070/" target="_blank">click here to contact me on ig</a>. </p>
+  </div>
+  
+  </footer>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
+
